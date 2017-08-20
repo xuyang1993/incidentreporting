@@ -7,13 +7,25 @@
 //
 
 import XCTest
+
 @testable import Incident_Reporting
 
 class Incident_ReportingTests: XCTestCase {
     
+    var app: XCUIApplication!
+    
+    var controllerUnderTest: LogInViewController!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        app = XCUIApplication()
+        
+        app.launch()
+        
+        controllerUnderTest = UIStoryboard(name: "Main",bundle: nil).instantiateInitialViewController() as! LogInViewController
+        
     }
     
     override func tearDown() {
@@ -26,11 +38,26 @@ class Incident_ReportingTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testInputLengthMoreThanEight() {
+        
+        let test_username = "xuyang1993"
+        
+        let username = test_username.checkLength()
+        
+        XCTAssertEqual(username, true)
+        
+        
+        let test_password = "123456"
+        
+        let password = test_password.checkLength()
+        
+        XCTAssertEqual(password, false)
+        
+        
     }
+    
+    
+    
+    
     
 }

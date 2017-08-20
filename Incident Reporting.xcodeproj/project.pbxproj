@@ -15,6 +15,14 @@
 		299351C81F48038C008A4E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299351C61F48038C008A4E49 /* LaunchScreen.storyboard */; };
 		299351D31F48038C008A4E49 /* Incident_ReportingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351D21F48038C008A4E49 /* Incident_ReportingTests.swift */; };
 		299351DE1F48038C008A4E49 /* Incident_ReportingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351DD1F48038C008A4E49 /* Incident_ReportingUITests.swift */; };
+		299351EC1F480425008A4E49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351EB1F480425008A4E49 /* MainViewController.swift */; };
+		299351EF1F480470008A4E49 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351EE1F480470008A4E49 /* ReportViewController.swift */; };
+		299351F11F48047C008A4E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351F01F48047C008A4E49 /* SearchViewController.swift */; };
+		299351F31F4804EA008A4E49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351F21F4804EA008A4E49 /* LogInViewController.swift */; };
+		299351F71F481204008A4E49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351F61F481204008A4E49 /* UITextField.swift */; };
+		299351F91F481AC3008A4E49 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351F81F481AC3008A4E49 /* SearchTableViewCell.swift */; };
+		299351FE1F48442C008A4E49 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351FD1F48442C008A4E49 /* UIViewController.swift */; };
+		501AF521B573303BDBC61E8E /* Pods_Incident_Reporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2CE9221DD79BB120E1331 /* Pods_Incident_Reporting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,16 @@
 		299351D91F48038C008A4E49 /* Incident ReportingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Incident ReportingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		299351DD1F48038C008A4E49 /* Incident_ReportingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident_ReportingUITests.swift; sourceTree = "<group>"; };
 		299351DF1F48038C008A4E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299351EB1F480425008A4E49 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		299351EE1F480470008A4E49 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		299351F01F48047C008A4E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		299351F21F4804EA008A4E49 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		299351F61F481204008A4E49 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		299351F81F481AC3008A4E49 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		299351FD1F48442C008A4E49 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		4EE2CE9221DD79BB120E1331 /* Pods_Incident_Reporting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Incident_Reporting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726490467C260ED302C13605 /* Pods-Incident Reporting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incident Reporting.release.xcconfig"; path = "Pods/Target Support Files/Pods-Incident Reporting/Pods-Incident Reporting.release.xcconfig"; sourceTree = "<group>"; };
+		D142BDF5F81F1EFC82C33D81 /* Pods-Incident Reporting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incident Reporting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Incident Reporting/Pods-Incident Reporting.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501AF521B573303BDBC61E8E /* Pods_Incident_Reporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047EEA29259CEC92380D1DCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EE2CE9221DD79BB120E1331 /* Pods_Incident_Reporting.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		299351AE1F48038B008A4E49 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +110,8 @@
 				299351D11F48038C008A4E49 /* Incident ReportingTests */,
 				299351DC1F48038C008A4E49 /* Incident ReportingUITests */,
 				299351B81F48038B008A4E49 /* Products */,
+				9CA8EC497B90E3B94A0920F5 /* Pods */,
+				047EEA29259CEC92380D1DCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +135,9 @@
 				299351C61F48038C008A4E49 /* LaunchScreen.storyboard */,
 				299351C91F48038C008A4E49 /* Info.plist */,
 				299351C11F48038C008A4E49 /* Incident_Reporting.xcdatamodeld */,
+				299351ED1F480432008A4E49 /* Main */,
+				299351F41F4804EE008A4E49 /* Login */,
+				299351F51F4811EA008A4E49 /* Extension */,
 			);
 			path = "Incident Reporting";
 			sourceTree = "<group>";
@@ -128,6 +160,43 @@
 			path = "Incident ReportingUITests";
 			sourceTree = "<group>";
 		};
+		299351ED1F480432008A4E49 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				299351EB1F480425008A4E49 /* MainViewController.swift */,
+				299351EE1F480470008A4E49 /* ReportViewController.swift */,
+				299351F01F48047C008A4E49 /* SearchViewController.swift */,
+				299351F81F481AC3008A4E49 /* SearchTableViewCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		299351F41F4804EE008A4E49 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				299351F21F4804EA008A4E49 /* LogInViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		299351F51F4811EA008A4E49 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				299351F61F481204008A4E49 /* UITextField.swift */,
+				299351FD1F48442C008A4E49 /* UIViewController.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		9CA8EC497B90E3B94A0920F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D142BDF5F81F1EFC82C33D81 /* Pods-Incident Reporting.debug.xcconfig */,
+				726490467C260ED302C13605 /* Pods-Incident Reporting.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 299351E21F48038C008A4E49 /* Build configuration list for PBXNativeTarget "Incident Reporting" */;
 			buildPhases = (
+				7233EFF608A2CE37D9C484F4 /* [CP] Check Pods Manifest.lock */,
 				299351B31F48038B008A4E49 /* Sources */,
 				299351B41F48038B008A4E49 /* Frameworks */,
 				299351B51F48038B008A4E49 /* Resources */,
+				0C3CF63C711F4EAFB35CCC77 /* [CP] Embed Pods Frameworks */,
+				B1A73001139E6C28B6A50E94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,14 +332,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C3CF63C711F4EAFB35CCC77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Incident Reporting/Pods-Incident Reporting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7233EFF608A2CE37D9C484F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B1A73001139E6C28B6A50E94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Incident Reporting/Pods-Incident Reporting-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		299351B31F48038B008A4E49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299351F91F481AC3008A4E49 /* SearchTableViewCell.swift in Sources */,
+				299351F11F48047C008A4E49 /* SearchViewController.swift in Sources */,
 				299351BD1F48038B008A4E49 /* ViewController.swift in Sources */,
+				299351FE1F48442C008A4E49 /* UIViewController.swift in Sources */,
 				299351BB1F48038B008A4E49 /* AppDelegate.swift in Sources */,
+				299351F71F481204008A4E49 /* UITextField.swift in Sources */,
+				299351F31F4804EA008A4E49 /* LogInViewController.swift in Sources */,
 				299351C31F48038C008A4E49 /* Incident_Reporting.xcdatamodeld in Sources */,
+				299351EF1F480470008A4E49 /* ReportViewController.swift in Sources */,
+				299351EC1F480425008A4E49 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +544,7 @@
 		};
 		299351E31F48038C008A4E49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D142BDF5F81F1EFC82C33D81 /* Pods-Incident Reporting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9G65KC23WQ;
@@ -430,6 +558,7 @@
 		};
 		299351E41F48038C008A4E49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 726490467C260ED302C13605 /* Pods-Incident Reporting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9G65KC23WQ;
@@ -518,6 +647,7 @@
 				299351E41F48038C008A4E49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		299351E51F48038C008A4E49 /* Build configuration list for PBXNativeTarget "Incident ReportingTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +656,7 @@
 				299351E71F48038C008A4E49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		299351E81F48038C008A4E49 /* Build configuration list for PBXNativeTarget "Incident ReportingUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +665,7 @@
 				299351EA1F48038C008A4E49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

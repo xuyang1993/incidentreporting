@@ -1,0 +1,15 @@
+PODS:
+  - FontAwesome.swift (1.2.0)
+  - IQKeyboardManagerSwift (4.0.12)
+
+DEPENDENCIES:
+  - FontAwesome.swift
+  - IQKeyboardManagerSwift
+
+SPEC CHECKSUMS:
+  FontAwesome.swift: 60063e3f19ba4801155d4b0f2334ab7585763ab3
+  IQKeyboardManagerSwift: 3c66bea62a7d955b67b0eef0e31522b46261336b
+
+PODFILE CHECKSUM: 7a10c4fbd450b11bae517d18ec9086e3472b2841
+
+COCOAPODS: 1.1.1
