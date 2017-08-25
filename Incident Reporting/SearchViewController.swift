@@ -13,11 +13,22 @@ import CoreData
 
 class SearchViewController: UIViewController {
 
-    
+    // Table View
     @IBOutlet weak var tableview: UITableView!
     
+    // Search Bar
+    @IBOutlet weak var searchbar: UISearchBar!
     
+    
+    // Data List
     var Incidents: [NSManagedObject] = []
+    
+    // Filter List
+    var filterData: [NSManagedObject] = []
+    
+    
+    // Search
+    var isSearching = false
     
     
     override func viewDidLoad() {
@@ -27,12 +38,28 @@ class SearchViewController: UIViewController {
         self.navigationItem.title = "INCIDENT HISTORY"
         
         
-        
         // Table View
         tableview.tableFooterView = UIView()
         
+        loadTableViewData()
+        
+        
+        // Search Bar
+        searchbar.delegate = self
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func loadTableViewData() {
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
+            return
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -44,21 +71,49 @@ class SearchViewController: UIViewController {
             
             Incidents.reverse()
             
-            self.tableview.reloadData()
+            //self.tableview.reloadData()
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
+//    func filterTableViewData() {
+//        
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        
+//        
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest()
+//        fetchRequest.fetchLimit = 10
+//        fetchRequest.fetchOffset = 0
+//        
+//        let entity = NSEntityDescription.entity(forEntityName: entityName, in: contexts)
+//        fetchRequest.entity = entity
+//        
+//        let predicate = NSPredicate.init(format: "name = 'nnn'", "")
+//        fetchRequest.predicate = predicate
+//        
+//        do {
+//            
+//            let fetchedObjects = try contexts.fetch(fetchRequest) as! [Person]
+//            for one: Person in fetchedObjects {
+//                print("==========\(String(describing: one.name))")
+//                print("==========\(String(describing: one.uid))")
+//                print("==========\(String(describing: one.url))")
+//            }
+//            
+//        } catch  {
+//            print("Could not fetch. \(error), \(error.userInfo)")
+//        }
+//        
+//    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -76,7 +131,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return Incidents.count
+        if isSearching {
+            
+            return filterData.count
+        } else {
+            
+            return Incidents.count
+        }
+        
     }
     
     
@@ -85,11 +147,47 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
-        let index_incident = Incidents[indexPath.row]
-        
-        cell.incident = index_incident as! Incident
+        if isSearching {
+            
+            let index_incident = filterData[indexPath.row]
+            
+            cell.incident = (index_incident as? Incident)!
+            
+        } else {
+            
+            let index_incident = Incidents[indexPath.row]
+            
+            cell.incident = index_incident as! Incident
+            
+        }
         
         return cell
+    }
+    
+}
+
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            
+            isSearching = false
+            
+            view.endEditing(true)
+            
+            tableview.reloadData()
+            
+        } else {
+            
+            isSearching = true
+            
+            filterData = Incidents.filter({ ($0 as! Incident).machine_name!.contains(searchBar.text!) })
+            
+            tableview.reloadData()
+        }
+        
     }
     
 }
