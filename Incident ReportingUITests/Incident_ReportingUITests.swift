@@ -39,24 +39,6 @@ class Incident_ReportingUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    // Test Login Success
-    func testLoginSuccess() {
-        
-        // Input Correct Format User Name
-        app.textFields["login_textfield_username"].tap()
-        app.textFields["login_textfield_username"].typeText("xuyang1993")
-        
-        // Input Correct Format Password
-        app.textFields["login_textfield_password"].tap()
-        app.textFields["login_textfield_password"].typeText("1234567890")
-        
-        // Tap Login Button
-        app.buttons["login_button_login"].tap()
-        
-        app.alerts["Success"].buttons["OK"].tap()
-
-    }
-    
     // Test Login Fail
     func testLoginFail() {
         
@@ -87,24 +69,44 @@ class Incident_ReportingUITests: XCTestCase {
         
     }
     
+    // Test Login Success
+    func testLoginSuccess() {
+        
+        // Input Correct Format User Name
+        app.textFields["login_textfield_username"].tap()
+        app.textFields["login_textfield_username"].typeText("xuyang1993")
+        
+        // Input Correct Format Password
+        app.textFields["login_textfield_password"].tap()
+        app.textFields["login_textfield_password"].typeText("1234567890")
+        
+        // Tap Login Button
+        app.buttons["login_button_login"].tap()
+        
+        app.alerts["Success"].buttons["OK"].tap()
+        
+    }
+    
+    
     // Test Submit Incident Reporting Success
     func testSubmitIncidentReporting() {
         
-        // Submit
+        // SUBMIT Button Tap
         app.buttons["SUBMIT"].tap()
         
+        // Machine Name Input
         app.textFields["report_textfield_machine"].tap()
         app.textFields["report_textfield_machine"].typeText("MACHINE 2017")
         
-        
+        // Location Input
         app.textFields["report_textfield_location"].tap()
         app.textFields["report_textfield_location"].typeText("TESTING ROOM")
         
-        
+        // Description Input
         app.textFields["report_textfield_description"].tap()
         app.textFields["report_textfield_description"].typeText("BROKEN!")
         
-        
+        // Submit New Report
         app.buttons["report_button_submit"].tap()
         
     }
@@ -112,34 +114,34 @@ class Incident_ReportingUITests: XCTestCase {
     // Test Submit Incident Reporting Fail
     func testSubmitIncidentReportingFail() {
         
-        // SUBMIT
+        // SUBMIT Button Tap
         app.buttons["SUBMIT"].tap()
         
         
-        // Tap Submit Button
+        // Submit New Report
         app.buttons["report_button_submit"].tap()
         
         app.alerts["Alert"].buttons["OK"].tap()
         
-        
+        // Machine Name Input
         app.textFields["report_textfield_machine"].tap()
         app.textFields["report_textfield_machine"].typeText("MACHINE 2017")
         
-        
+        // Location Input
         app.textFields["report_textfield_location"].tap()
         app.textFields["report_textfield_location"].typeText("TESTING ROOM")
         
         
-        // Tap Submit Button
+        // Submit New Report
         app.buttons["report_button_submit"].tap()
         
         app.alerts["Alert"].buttons["OK"].tap()
         
-        
+        // Description Input
         app.textFields["report_textfield_description"].tap()
         app.textFields["report_textfield_description"].typeText("BROKEN!")
         
-        
+        // Submit New Report
         app.buttons["report_button_submit"].tap()
         
     }
@@ -148,7 +150,7 @@ class Incident_ReportingUITests: XCTestCase {
     // Test Submit and View Incident Reporting
     func testSubmitViewIncidentReporting() {
         
-        // HISTORY
+        // HISTORY Button Tap
         app.buttons["HISTORY"].tap()
         
         let table = app.tables["search_tableview"]
@@ -159,25 +161,25 @@ class Incident_ReportingUITests: XCTestCase {
         app.navigationBars["INCIDENT HISTORY"].children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
         
         
-        // SUBMIT
+        // SUBMIT Button Tap
         app.buttons["SUBMIT"].tap()
         
+        // Machine Name Input
         app.textFields["report_textfield_machine"].tap()
         app.textFields["report_textfield_machine"].typeText("MACHINE 2017")
         
-        
+        // Location Input
         app.textFields["report_textfield_location"].tap()
         app.textFields["report_textfield_location"].typeText("TESTING ROOM")
         
-        
+        // Description Input
         app.textFields["report_textfield_description"].tap()
         app.textFields["report_textfield_description"].typeText("BROKEN!")
         
-        
+        // Submit New Report
         app.buttons["report_button_submit"].tap()
         
-        
-        // HISTORY
+        // HISTORY Button Tap
         app.buttons["HISTORY"].tap()
         
         let new_table = app.tables["search_tableview"]

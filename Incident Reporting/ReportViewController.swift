@@ -81,6 +81,7 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
         
         let date_string = formatter.string(from: date)
         
+        
         // Time
         let calendar = Calendar.current
         
@@ -91,6 +92,7 @@ class ReportViewController: UIViewController, UITextFieldDelegate {
         let seconds = calendar.component(.second, from: date)
         
         let time_string = "\(hour):\(minutes):\(seconds)"
+        
         
         // Millionsecondes
         let id = Date().millisecondsSince1970

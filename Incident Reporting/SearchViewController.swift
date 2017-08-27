@@ -69,51 +69,17 @@ class SearchViewController: UIViewController {
         do {
             Incidents = try managedContext.fetch(fetchRequest)
             
+            // Show data from the latest one
             Incidents.reverse()
             
-            //self.tableview.reloadData()
+            self.tableview.reloadData()
+            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
     }
 
-    
-//    func filterTableViewData() {
-//        
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//            return
-//        }
-//        
-//        
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        
-//        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest()
-//        fetchRequest.fetchLimit = 10
-//        fetchRequest.fetchOffset = 0
-//        
-//        let entity = NSEntityDescription.entity(forEntityName: entityName, in: contexts)
-//        fetchRequest.entity = entity
-//        
-//        let predicate = NSPredicate.init(format: "name = 'nnn'", "")
-//        fetchRequest.predicate = predicate
-//        
-//        do {
-//            
-//            let fetchedObjects = try contexts.fetch(fetchRequest) as! [Person]
-//            for one: Person in fetchedObjects {
-//                print("==========\(String(describing: one.name))")
-//                print("==========\(String(describing: one.uid))")
-//                print("==========\(String(describing: one.url))")
-//            }
-//            
-//        } catch  {
-//            print("Could not fetch. \(error), \(error.userInfo)")
-//        }
-//        
-//    }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -144,9 +110,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
+        // Show data
         if isSearching {
             
             let index_incident = filterData[indexPath.row]
@@ -183,6 +149,7 @@ extension SearchViewController: UISearchBarDelegate {
             
             isSearching = true
             
+            // Filter data based on input keywords
             filterData = Incidents.filter({ ($0 as! Incident).machine_name!.contains(searchBar.text!) })
             
             tableview.reloadData()

@@ -60,9 +60,11 @@ class LogInViewController: UIViewController {
             
         } else {
             
+            // Login Success
             UserDefaults.standard.set(true, forKey: "user_isLoggedIn")
             
             
+            // Success Alert
             let actionSheetController = UIAlertController(title: "Success",
                                                           message: "",
                                                           preferredStyle: .alert)
@@ -73,24 +75,12 @@ class LogInViewController: UIViewController {
             
             actionSheetController.addAction(action)
             
+            // Popup
             self.present(actionSheetController, animated: true, completion: nil)
         
-            
         }
         
     }
-    
-    
-    func checkLength(_ input: String) -> Bool {
-        
-        if input.characters.count < 8 {
-            return false
-        } else {
-            return true
-        }
-        
-    }
-    
     
 }
 

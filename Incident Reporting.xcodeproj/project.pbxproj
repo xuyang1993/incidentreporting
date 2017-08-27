@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		297C00561F52FED700B77090 /* Incident_ReportingUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C00551F52FED700B77090 /* Incident_ReportingUnitTests.swift */; };
 		299351BB1F48038B008A4E49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351BA1F48038B008A4E49 /* AppDelegate.swift */; };
 		299351BD1F48038B008A4E49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299351BC1F48038B008A4E49 /* ViewController.swift */; };
 		299351C01F48038C008A4E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299351BE1F48038C008A4E49 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		297C00551F52FED700B77090 /* Incident_ReportingUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Incident_ReportingUnitTests.swift; sourceTree = "<group>"; };
 		299351B71F48038B008A4E49 /* Incident Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Incident Reporting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		299351BA1F48038B008A4E49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		299351BC1F48038B008A4E49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				299351D21F48038C008A4E49 /* Incident_ReportingTests.swift */,
 				299351D41F48038C008A4E49 /* Info.plist */,
+				297C00551F52FED700B77090 /* Incident_ReportingUnitTests.swift */,
 			);
 			path = "Incident ReportingTests";
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				297C00561F52FED700B77090 /* Incident_ReportingUnitTests.swift in Sources */,
 				299351D31F48038C008A4E49 /* Incident_ReportingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
